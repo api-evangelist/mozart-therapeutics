@@ -1,17 +1,42 @@
 aid: mozart-therapeutics
 name: Mozart Therapeutics
-description: 'Mozart Therapeutics is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Mozart Therapeutics, Inc. is a privately held, clinical-stage biopharmaceutical company in
+  Seattle, Washington, founded in 2020 to develop disease-modifying therapies for autoimmune and
+  inflammatory disease. Its platform is built on the regulatory CD8 T cell (CD8 Treg) network — an
+  upstream immune checkpoint that normally recognizes and eliminates the pathogenic immune cells
+  that attack healthy tissue, and that becomes dysfunctional in autoimmune disease when inhibitory
+  killer immunoglobulin-like receptors (KIR) block CD8 Treg activation. Rather than suppressing
+  downstream inflammation, Mozart engineers bispecific CD8 Treg modulators intended to restore that
+  checkpoint and re-establish long-term immune balance. Its pipeline comprises MTX-101, a KIR x CD8
+  bispecific antibody in Phase 1b study for type 1 diabetes, and MTX-201, a KIR x ICOS bispecific
+  in preclinical development for inflammatory bowel disease. The company launched with a $55M
+  Series A led by ARCH Venture Partners and Sofinnova Partners with participation from Eli Lilly,
+  MRL Ventures Fund, Leaps by Bayer, Altitude Life Science Ventures and Alexandria Venture
+  Investments, and later added a $25M extension including Pfizer Ventures, AbbVie Ventures, Ono
+  Venture Investment and UPMC Enterprises. Mozart Therapeutics sells therapeutics, not software: it
+  runs no developer program, publishes no API, SDK or machine-readable specification, and maintains
+  no public source-code organization.
 url: https://raw.githubusercontent.com/api-evangelist/mozart-therapeutics/refs/heads/main/apis.yml
+image: https://www.mozart-tx.com/themes/default/images/logo_color.svg
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
-specificationVersion: '0.20'
+x-tier: profiled
+x-tier-reason: enrichment-pipeline
+specificationVersion: '0.23'
 created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Biotechnology
+- Pharmaceuticals
+- Immunology
+- Autoimmune Disease
+- Drug Discovery
+- Life Sciences
+- Clinical Trials
+- Bispecific Antibodies
+- Research
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +44,60 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/mozart-therapeutics-domain-security.yml
 - type: Website
+  url: https://www.mozart-tx.com/
+- type: About
+  url: https://www.mozart-tx.com/about/
+- type: Science
+  url: https://www.mozart-tx.com/science/
+- type: Pipeline
+  url: https://www.mozart-tx.com/pipeline/
+- type: News
+  url: https://www.mozart-tx.com/news/news-releases/
+- type: Careers
+  url: https://www.mozart-tx.com/careers/
+- type: Contact
+  url: https://www.mozart-tx.com/contact/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/mozart-therapeutics
+- type: SecondaryMarket
   url: https://forgeglobal.com/mozart-therapeutics_stock/
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Mozart Therapeutics is a privately held clinical-stage biopharmaceutical company whose product
+    is a bispecific-antibody pipeline (MTX-101, MTX-201), not software — www.mozart-tx.com is an
+    eight-page brochure site (about, science, pipeline, news, careers, contact) with no developer,
+    docs or API section, no robots.txt or sitemap.xml, and a real HTTP 404 on every spec path
+    probed (/openapi.json, /swagger.json, /graphql, /llms.txt, all five /.well-known/ documents);
+    mozart-tx.com serves wildcard DNS so api./docs./developer./mcp. resolve to the marketing site's
+    address but no TLS service answers on them, there is no GitHub organization under any Mozart
+    spelling, and no first-party package exists on npm or PyPI.
+  evidence:
+  - url: https://www.mozart-tx.com/
+    status: 200
+  - url: https://www.mozart-tx.com/openapi.json
+    status: 404
+  - url: https://www.mozart-tx.com/llms.txt
+    status: 404
+  - url: https://www.mozart-tx.com/robots.txt
+    status: 404
+  - url: https://www.mozart-tx.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.mozart-tx.com/developers/
+    status: 404
+  - url: https://dev.mozart-tx.com/openapi.json
+    status: 404
+  - url: https://api.github.com/search/users?q=mozart-therapeutics
+    status: 200
+  - url: https://pypi.org/pypi/mozart-therapeutics/json
+    status: 404
+  checked: '2026-08-26'

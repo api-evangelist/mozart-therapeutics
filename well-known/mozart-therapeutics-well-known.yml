@@ -1,0 +1,47 @@
+generated: '2026-08-26'
+method: probed
+source: >-
+  Live unauthenticated GET of each /.well-known/ path on every host associated with Mozart
+  Therapeutics (the corporate site www.mozart-tx.com and the staging copy dev.mozart-tx.com).
+  Every path returned a real HTTP 404 from the origin — a recorded absence, not a soft-404.
+  No common[] WellKnown or SecurityTxt pointer is emitted because no path served a document.
+note: >-
+  Mozart Therapeutics has no API host to probe. The wildcard DNS record for mozart-tx.com answers
+  api./docs./developer./mcp./portal./app. with the marketing site's address (54.175.138.29) but no
+  TLS service listens there, so those names resolve without being reachable hosts and are not
+  probed as origins.
+hosts:
+- host: www.mozart-tx.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+- host: dev.mozart-tx.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
