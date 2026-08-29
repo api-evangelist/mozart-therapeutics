@@ -18,6 +18,17 @@ description: >-
   runs no developer program, publishes no API, SDK or machine-readable specification, and maintains
   no public source-code organization.
 url: https://raw.githubusercontent.com/api-evangelist/mozart-therapeutics/refs/heads/main/apis.yml
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://www.mozart-tx.com/themes/default/images/logo_color.svg
 x-type: company
 x-source: harvest:secondary-market
